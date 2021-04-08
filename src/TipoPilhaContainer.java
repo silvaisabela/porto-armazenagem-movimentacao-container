@@ -24,7 +24,7 @@ public class TipoPilhaContainer {
 		}
 		return this.dados[this.topo - 1];
 	}
-
+	
 	public boolean pop() {
 		if (this.isEmpty()) {
 			return false;
@@ -45,5 +45,9 @@ public class TipoPilhaContainer {
 	
 	public int size() {
 		return this.topo;
+	}
+	
+	public Container[] retornaDados() {
+		return this.dados;
 	}
 }

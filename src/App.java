@@ -33,6 +33,7 @@ public class App {
 				break;
 
 			case 2:
+				retirarContainer(porto, scanner);
 				System.out.println("opcao 2");
 				break;
 
@@ -52,6 +53,14 @@ public class App {
 		}
 		
 		scanner.close();
+	}
+
+	private static void retirarContainer(Porto porto, Scanner scanner) {
+		// TODO Auto-generated method stub
+		System.out.println("Informe o código de identificaçao do conteiner a ser retirado: ");
+		int id = scanner.nextInt();
+		
+		porto.retirarContainer(id);
 	}
 
 	private static void inserirContainer(Porto porto, Scanner scanner) throws Exception {
