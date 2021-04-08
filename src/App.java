@@ -55,7 +55,7 @@ public class App {
 		scanner.close();
 	}
 
-	private static void retirarContainer(Porto porto, Scanner scanner) {
+	private static void retirarContainer(Porto porto, Scanner scanner) throws Exception {
 		// TODO Auto-generated method stub
 		System.out.println("Informe o código de identificaçao do conteiner a ser retirado: ");
 		int id = scanner.nextInt();

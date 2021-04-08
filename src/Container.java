@@ -7,6 +7,10 @@ public class Container {
 	public Container(int id) {
 		this.id = id;
 	}
+	public Container(int id, int contMove) {
+		this.id = id;
+		this.contMove = contMove;
+	}
 
 	public int getId() {
 		return id;
@@ -22,6 +26,9 @@ public class Container {
 	
 	public void setContMove(int contMove) {
 		this.contMove = contMove;
+	}
+	public void setContMove() {
+		this.contMove ++;
 	}
 
 }
