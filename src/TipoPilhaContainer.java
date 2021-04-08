@@ -29,7 +29,8 @@ public class TipoPilhaContainer {
 		if (this.isEmpty()) {
 			return false;
 		}
-		this.dados[this.topo - 1] = null;
+		
+		//this.dados[this.topo - 1] = null;
 		this.topo -= 1;
 
 		return true;
