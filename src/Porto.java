@@ -93,6 +93,23 @@ public class Porto {
 		 System.out.println();
 	}
 	
+	public void apresentarPlanilha() {
+		Container dados1[] = pilha1.retornaDados();
+		System.out.println("***** Planilha de containers (Pilha 1) *****");
+		for(int i=0; i < pilha1.size(); i++) {
+			System.out.println(dados1[i].getId());
+		}
+		System.out.println();
+		System.out.println();
+		
+		System.out.println("***** Planilha de containers (Pilha 2) *****");
+		Container dados2[] = pilha2.retornaDados();
+		for(int i=0; i < pilha2.size(); i++) {
+			System.out.println(dados2[i].getId());
+		}
+		System.out.println();
+		System.out.println();
+	}
 }
 
 

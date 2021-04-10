@@ -46,6 +46,7 @@ public class App {
 				break;
 				
 			case 5:
+				apresentarPlanilha(porto);
 				System.out.println("opcao 5");
 				break;
 			}
@@ -71,6 +72,11 @@ public class App {
 		porto.inserirContainer(container);
 		System.out.println();
 		System.out.println();
+	}
+	
+	private static void apresentarPlanilha(Porto porto) {
+		porto.apresentarPlanilha();
+		
 	}
 	
 }
