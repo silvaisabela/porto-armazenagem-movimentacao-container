@@ -1,7 +1,5 @@
 import java.util.Scanner;
 
-import src.Porto;
-
 public class App {
 
 	public static void main(String[] args) throws Exception {
@@ -31,26 +29,28 @@ public class App {
 			switch (opcao) {
 
 			case 1:
+				System.out.println("-------------------- OPÇÃO 1 --------------------");
 				inserirContainer(porto, scanner);
 				break;
 
 			case 2:
+				System.out.println("-------------------- OPÇÃO 2 --------------------");
 				retirarContainer(porto, scanner);
-				System.out.println("opcao 2");
 				break;
 
 			case 3:
-				System.out.println("opcao 3");
+				System.out.println("-------------------- OPÇÃO 3 --------------------");
+				calcularMovimentacao(porto);
 				break;
 
 			case 4:
-				System.out.println("opcao 4");
+				System.out.println("-------------------- OPÇÃO 4 --------------------");
 				exibirPilhas(porto);
 				break;
 				
 			case 5:
+				System.out.println("-------------------- OPÇÃO 5 --------------------");
 				apresentarPlanilha(porto);
-				System.out.println("opcao 5");
 				break;
 			}
 
@@ -58,15 +58,7 @@ public class App {
 		
 		scanner.close();
 	}
-
-	private static void retirarContainer(Porto porto, Scanner scanner) throws Exception {
-		// TODO Auto-generated method stub
-		System.out.println("Informe o código de identificaçao do conteiner a ser retirado: ");
-		int id = scanner.nextInt();
-		
-		porto.retirarContainer(id);
-	}
-
+	
 	private static void inserirContainer(Porto porto, Scanner scanner) throws Exception {
 		System.out.print("Informe código de identificação do conteiner: ");
 		int id = scanner.nextInt();
@@ -77,6 +69,18 @@ public class App {
 		System.out.println();
 	}
 	
+	private static void retirarContainer(Porto porto, Scanner scanner) throws Exception {
+		// TODO Auto-generated method stub
+		System.out.println("Informe o código de identificaçao do conteiner a ser retirado: ");
+		int id = scanner.nextInt();
+		
+		porto.retirarContainer(id);
+	}
+	
+	private static void calcularMovimentacao(Porto porto) {
+		porto.calcularMovimentacao();
+	}
+
 	private static void exibirPilhas(Porto porto) throws Exception {
 		porto.exibirPilhas();
 	}
@@ -85,5 +89,6 @@ public class App {
 		porto.apresentarPlanilha();
 		
 	}
+
 	
 }

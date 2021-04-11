@@ -1,9 +1,8 @@
-import src.Container;
-
 public class Porto {
 
 	private TipoPilhaContainer pilha1;
 	private TipoPilhaContainer pilha2;
+	private int moveContainersRetirados;
 	
 	public Porto( ) {
 		pilha1 = new TipoPilhaContainer();
@@ -13,10 +12,13 @@ public class Porto {
 	public void inserirContainer(Container container) throws Exception {
 		if (pilha1.size() <= pilha2.size()) {
 			pilha1.push(container);
+			System.out.println("--> Container "+container.getId()+" inserido na pilha 1.");
 		} else {
 			pilha2.push(container);
+			System.out.println("--> Container "+container.getId()+" inserido na pilha 2.");
 
 		}
+		System.out.println("---------------------------------------------------");
 
 	}
 
@@ -33,11 +35,11 @@ public class Porto {
 				System.out.println("ID não encontrado");
 				
 			}else {
-				System.out.println("--------------------    CONTAINER ENCONTRADO NA PILHA 2   --------------------");
+				System.out.println("--------------------  CONTAINER ENCONTRADO NA PILHA 2  --------------------");
 				movimentarContainers(pilha2, posicao_aux);
 			}
 		}else {
-			System.out.println("--------------------    CONTAINER ENCONTRADO NA PILHA 1   --------------------");
+			System.out.println("--------------------  CONTAINER ENCONTRADO NA PILHA 1 --------------------");
 			movimentarContainers(pilha1, posicao_aux);
 
 		}
@@ -62,7 +64,7 @@ public class Porto {
 	private void movimentarContainers(TipoPilhaContainer pilha, int posicao_aux) throws Exception {
 		
 		System.out.println("Posição: "+posicao_aux);
-		System.out.println("------------------    MOVIMENTANDO CONTAINERS   -------------------");
+		System.out.println("------------------  MOVIMENTANDO CONTAINERS -------------------");
 		TipoPilhaContainer pilha_aux = new TipoPilhaContainer();
 		
 		Container container_aux;
@@ -91,6 +93,7 @@ public class Porto {
 			 pilha.push(container_aux);
 			 pilha_aux.pop();
 		 }
+		 moveContainersRetirados++;
 		 System.out.println("------------------------------------------------------------------");
 		 System.out.println();
 	}
@@ -135,6 +138,24 @@ public class Porto {
 		for(int i=0; i < pilha2.size(); i++) {
 			System.out.println(dados2[i].getId());
 		}
+		System.out.println();
+		System.out.println();
+	}
+	
+	public void calcularMovimentacao() {
+		int totalMove = 0;
+		
+		Container dados1[] = pilha1.retornaDados();
+		for(int i = 0; i < pilha1.size(); i++) {
+			totalMove += dados1[i].getContMove();
+		}
+		Container dados2[] = pilha2.retornaDados();
+		for(int i = 0; i < pilha2.size(); i++) {
+			totalMove += dados2[i].getContMove();
+		}
+		totalMove += moveContainersRetirados;
+		System.out.println("Número de movimentações: "+totalMove);
+		System.out.println("---------------------------------------------------");
 		System.out.println();
 		System.out.println();
 	}
