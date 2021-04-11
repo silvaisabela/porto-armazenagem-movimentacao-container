@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+import src.Porto;
+
 public class App {
 
 	public static void main(String[] args) throws Exception {
@@ -72,6 +74,10 @@ public class App {
 		porto.inserirContainer(container);
 		System.out.println();
 		System.out.println();
+	}
+	
+	private static void exibirPilhas(Porto porto) throws Exception {
+		porto.exibirPilhas();
 	}
 	
 	private static void apresentarPlanilha(Porto porto) {

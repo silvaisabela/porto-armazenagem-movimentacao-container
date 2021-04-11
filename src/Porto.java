@@ -1,3 +1,5 @@
+import src.Container;
+
 public class Porto {
 
 	private TipoPilhaContainer pilha1;
@@ -91,6 +93,32 @@ public class Porto {
 		 }
 		 System.out.println("------------------------------------------------------------------");
 		 System.out.println();
+	}
+	
+	public void exibirPilhas() throws Exception {
+		Container dadosP1[] = pilha1.retornaDados();
+		System.out.println("***** Ocupação das pilhas de containers *****");
+		
+		System.out.println();
+		
+		System.out.println("\t PILHA 1 ");
+		System.out.println("topo -> " + pilha1.size() + "]:" );
+		for(int i = pilha1.size()-1; i >= 0 ; i--) {
+			System.out.println("\t" + i + "]: Container [contMove=" + dadosP1[i].getContMove() + ", idContainer= " + dadosP1[i].getId() + "]" );
+		}
+		
+		System.out.println();
+		
+		Container dadosP2[] = pilha2.retornaDados();
+		System.out.println("\t PILHA 2 ");
+		
+		System.out.println("topo -> " + pilha2.size() + "]:" );
+		for(int i = pilha2.size()-1; i >= 0 ; i--) {
+			System.out.println("\t" + i + "]: Container [contMove=" + dadosP2[i].getContMove() + ", idContainer= " + dadosP2[i].getId() + "]" );
+		}
+		
+		System.out.println();
+		System.out.println();
 	}
 	
 	public void apresentarPlanilha() {
