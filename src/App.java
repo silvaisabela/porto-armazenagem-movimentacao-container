@@ -45,6 +45,7 @@ public class App {
 
 			case 4:
 				System.out.println("opcao 4");
+				exibirPilhas(porto);
 				break;
 				
 			case 5:
